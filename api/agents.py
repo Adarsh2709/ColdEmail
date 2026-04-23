@@ -2,7 +2,7 @@ from google import genai
 import os
 import json
 
-api_key = os.getenv("Gemini_API_Key")
+api_key = os.getenv("Gemini_API_Key") or "dummy_key"
 client = genai.Client(api_key=api_key)
 
 def clean_json(text):
