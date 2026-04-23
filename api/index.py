@@ -27,7 +27,4 @@ def generate():
         "email": email,
         "judge": result
     })
-
-# 🔥 REQUIRED for Vercel
-def handler(request):
-    return app(request.environ, lambda *args: None)
+
