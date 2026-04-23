@@ -22,7 +22,7 @@ def run_researcher(industry: str, product: str, log_step=None) -> str:
     
     try:
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-flash-latest",
             contents=prompt
         )
         return response.text
@@ -38,7 +38,7 @@ def run_persona_definer(industry, product, pain_points, log_step=None):
     prompt = f"Based on the {industry} industry and the product {product}, and these pain points: {pain_points}, define a target persona. Include Job Role, Responsibilities, Pain Points, and Goal. Keep it brief."
     try:
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-flash-latest",
             contents=prompt
         )
         return response.text
@@ -62,6 +62,8 @@ Format exactly like this JSON:
     "email_2": {{"subject": "...", "body": "...", "cta": "..."}},
     "email_3": {{"subject": "...", "body": "...", "cta": "..."}}
 }}
+
+IMPORTANT RULE: DO NOT use any placeholders like {{first_name}}, [Company], or <Product>. Always use a realistic mock name (e.g. "John") and a mock company (e.g. "Acme Corp") in the emails.
 """
     try:
         response = client.models.generate_content(
