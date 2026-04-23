@@ -46,10 +46,9 @@ Format exactly like this:
 
     except Exception as e:
         if log_step:
-            log_step(f"Gemini failed: {e}")
-
+            log_step(f"Judge failed: {e}")
         return {
             "overall_score": 3,
-            "summary": "Fallback result (Gemini failed)",
+            "summary": f"Gemini failed: {str(e)}",
             "error": str(e)
         }

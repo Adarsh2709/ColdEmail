@@ -75,7 +75,7 @@ Format exactly like this JSON:
         if log_step:
             log_step(f"Gemini failed: {e}")
         return {
-            "email_1": {"subject": "Quick idea", "body": "Hi, we can help with " + product, "cta": "Interested?"},
+            "email_1": {"subject": "Quick idea", "body": f"Gemini API Error: {str(e)}", "cta": "Interested?"},
             "email_2": {"subject": "Following up", "body": "Just following up on my previous email.", "cta": "Thoughts?"},
             "email_3": {"subject": "Final check", "body": "Is this a priority right now?", "cta": "Let me know"}
         }
