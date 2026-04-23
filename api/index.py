@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from api.agents import run_researcher, run_persona_definer, run_email_writer
-from api.judge import run_judge
+from agents import run_researcher, run_persona_definer, run_email_writer
+from judge import run_judge
 
 app = Flask(__name__)
 CORS(app) # Enable CORS for all routes
